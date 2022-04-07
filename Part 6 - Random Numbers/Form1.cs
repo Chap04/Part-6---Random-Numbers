@@ -19,20 +19,22 @@ namespace Part_6___Random_Numbers
         int maxStore;
         int minStore;
         Random generator = new Random();
-        int rand1;
-        int rand2;
-        public void RandStore()
-        {
-            int = generator.Next(minStore, maxStore);
-        }
+        //List <int> numbersList = new List<int>();
+    
         private void btnGo_Click(object sender, EventArgs e)
         {
+            lbxNumbers.Items.Clear();
             if (Int32.TryParse(txtMaximum.Text, out maxStore))
             {
                 maxStore = maxStore + 1;
                 if (Int32.TryParse(txtMinimum.Text, out minStore))
                 {
-
+                    
+                    for (int i = 0; i < 25; i++)
+                    {
+                        lbxNumbers.Items.Add(generator.Next(minStore, maxStore));
+                    }
+                    
                 }
             }
         }
